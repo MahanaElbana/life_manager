@@ -35,8 +35,8 @@
 ---
 ## <div><b>  Pomodoro manager ⏰ </b></div>  
  - <u>alarm model</u>
-     - session_time [x](choices)
-     - break_time [x](big and short break) 
+     - session_time (choices)
+     - break_time (big and short break) 
   - <u>operations</u>
     - clock_counter    
 
