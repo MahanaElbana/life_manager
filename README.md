@@ -42,3 +42,7 @@
     - text
 --- 
 
+## learning outcoming 👨‍🎓
+'''code
+models.DateField(auto_now)
+'''
