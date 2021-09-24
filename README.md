@@ -43,7 +43,7 @@
 --- 
 
 ## 👨‍🎓 👨‍🎓 earning outcoming 👨‍🎓 👨‍🎓
-```code
-DateField.auto_now
-DateField.auto_now_add
+```python 
+DateField.auto_now  #it can be change during update
+DateField.auto_now_add it can not Be change during update
 ```
