@@ -7,7 +7,7 @@
   * <u>requirments</u> :- 
     * title 
     * description  
-    * date 
+    * date_created 
     * isCompelete
     * task_begin
     * task_end 
@@ -23,14 +23,10 @@
       * media model 
         - title 
         - catogery(FK)  
-        - file
         - date_added  
-        - description           
-      * file model
-        - media (FK) 
-        - general_file  
-        - text(string) 
-        - urls 
+        - description  
+        - file 
+        - urls           
 
 ---
 ## <div><b>  Pomodoro manager ⏰ </b></div>  
