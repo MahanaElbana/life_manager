@@ -42,7 +42,8 @@
     - text
 --- 
 
-## learning outcoming 👨‍🎓
-'''code
-models.DateField(auto_now)
-'''
+## 👨‍🎓 👨‍🎓 earning outcoming 👨‍🎓 👨‍🎓
+```code
+DateField.auto_now
+DateField.auto_now_add
+```
