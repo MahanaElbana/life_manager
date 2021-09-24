@@ -41,6 +41,9 @@
  - <u> model</u>
     - text
 --- 
-Learning ahmed
 
-dfkjfkdjkfjdkfj
+## 👨‍🎓 👨‍🎓 earning outcoming 👨‍🎓 👨‍🎓
+```python 
+DateField.auto_now  #it can be change during update
+DateField.auto_now_add # it can not Be change during update
+```
