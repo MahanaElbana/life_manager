@@ -38,15 +38,14 @@ class TodoRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     ##        return Response(todoserializer.data ,status=status.HTTP_202_ACCEPTED) 
     ##    return Response("an error ocurs " ,status=status.HTTP_201_CREATED)
 
-    ##! --------------------- OR ---------------------##
+    ##! --------------------- OR ----------or-----------##
     def update(self, request, *args, **kwargs):
         ''' overriding on update method '''
         try:
             todo = Todo.objects.get(pk=kwargs['pk'])
-            user = User.objects.get(username=todo.ownerTodo)
+            #user = User.objects.get(username=todo.ownerTodo)
         except:
-            Response({"item is not exisit"} ,status=status.HTTP_202_ACCEPTED) 
-            return
+            return Response({"item is not exisit"} ,status=status.HTTP_202_ACCEPTED)
         todoserializer = TodoSerializer(instance=todo ,data=request.data)
         if todoserializer.is_valid():
             todoserializer.save()
