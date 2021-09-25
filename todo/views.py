@@ -43,10 +43,9 @@ class TodoRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
         ''' overriding on update method '''
         try:
             todo = Todo.objects.get(pk=kwargs['pk'])
-            user = User.objects.get(username=todo.ownerTodo)
+            #user = User.objects.get(username=todo.ownerTodo)
         except:
-            Response({"item is not exisit"} ,status=status.HTTP_202_ACCEPTED) 
-            return
+            return Response({"item is not exisit"} ,status=status.HTTP_202_ACCEPTED)
         todoserializer = TodoSerializer(instance=todo ,data=request.data)
         if todoserializer.is_valid():
             todoserializer.save()
