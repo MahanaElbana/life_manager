@@ -3,10 +3,12 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import serializers, status
 # Create your views here.
-from .serializer import CategorySerializer,MediaSerializer
+from .serializer import CategorySerializer, MediaSerializer
 from .models import Category,Media
+from rest_framework import mixins ,generics
 
-#Category
+
+#! ------------------------------  Category --------------- ##
 # LIST & CREATE
 @api_view(['GET','POST'])
 def list_create_category(request):
@@ -46,5 +48,34 @@ def update_delete_retreive_category(request,id):
         (get_category(id)).delete()
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    
-    
+#! ------------------------------  Media --------------- ##
+
+class list_create_media(mixins.ListModelMixin,
+    mixins.CreateModelMixin,
+    generics.GenericAPIView):
+    queryset = Media.objects.all()
+    serializer_class =MediaSerializer
+
+    def get(self ,request):
+        return self.list(request)
+
+    def post(self ,request):
+        return self.create(request)   
+
+
+class update_delete_retreive_media(mixins.UpdateModelMixin,
+        mixins.DestroyModelMixin,
+        mixins.RetrieveModelMixin,
+        generics.GenericAPIView):
+
+    queryset = Media.objects.all()
+    serializer_class =MediaSerializer
+
+    def get(self ,request ,pk):
+        return self.retrieve(request)
+
+    def put(self ,request,pk):
+        return self.update(request) 
+
+    def delete(self ,request,pk):
+        return self.destroy(request)        

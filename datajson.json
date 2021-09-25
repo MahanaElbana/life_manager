@@ -1,0 +1,27 @@
+[{  "comment for upload data from json to database":"python manage.py loaddata datajson.json",
+    "model": "media_manager.media",
+    "pk": 1,
+    "fields":{"media_type": "text",
+        "title": "hello pro",
+        "description": "textadded",
+        "file": null,
+        "url": "",
+        "text": "fdfdfdf",
+        "dateAdded": "2021-09-06T22:29:00Z",
+        "category": 1}
+    
+},
+{  
+    "model": "media_manager.media",
+    "pk": 2,
+    "fields":{"media_type": "text",
+        "title": "hello nine",
+        "description": "texta dded",
+        "file": null,
+        "url": "",
+        "text": "prprrp",
+        "dateAdded": "2021-09-06T22:29:00Z",
+        "category": 1}
+        
+    
+}]
