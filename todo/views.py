@@ -9,12 +9,13 @@ from django.contrib.auth.models import User
 from rest_framework import status
 from rest_framework.response import Response
 
-# GET-LIST and POST (create)
-class TodoListCreate(generics.ListCreateAPIView):
+# GET -POST - for user and admin 
+class TodoList_create(generics.ListAPIView):
     queryset = Todo.objects.all()
     serializer_class =  TodoSerializer
-    permission_classes = (IsAdminUser,)
-    authentication_classes = [BasicAuthentication]
+    permission_classes = (UserReadOnly,)
+    authentication_classes = (BasicAuthentication,)
+
 
 # PUT - DELETE - GET(ID) 
 class TodoRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
