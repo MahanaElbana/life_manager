@@ -23,5 +23,6 @@ class Media(models.Model):
     category = models.ForeignKey(Category,related_name='category', on_delete=models.CASCADE)
     dateAdded = models.DateTimeField(auto_now=False)
     
+    
     def __str__(self):
         return self.title
