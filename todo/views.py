@@ -2,7 +2,7 @@
 from .models import Todo
 from .serializer import TodoSerializer
 from rest_framework import generics
-from .permissions import UserReadOnly
+from .permissions import UserOnly
 from rest_framework.authentication import  BasicAuthentication
 from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import User
@@ -13,7 +13,7 @@ from rest_framework.response import Response
 class TodoList_create(generics.ListAPIView):
     queryset = Todo.objects.all()
     serializer_class =  TodoSerializer
-    permission_classes = (UserReadOnly,)
+    permission_classes = (UserOnly,)
     authentication_classes = (BasicAuthentication,)
 
 
@@ -21,7 +21,7 @@ class TodoList_create(generics.ListAPIView):
 class TodoRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = Todo.objects.all()
     serializer_class =  TodoSerializer
-    permission_classes = (UserReadOnly,)
+    permission_classes = (UserOnly,)
     authentication_classes = (BasicAuthentication,)
     
     # partial updating 
