@@ -14,7 +14,7 @@
 #     serializer_class =stickStickNoteSerializer
 
 from .serializer import StickNoteSerializer
-from .models import StickNote 
+from .models import StickNote
 from rest_framework.views import APIView
 from rest_framework import generics
 from rest_framework.authentication import BasicAuthentication
@@ -22,7 +22,8 @@ from rest_framework.permissions import IsAuthenticated,IsAdminUser
 from rest_framework.decorators import api_view,authentication_classes,permission_classes
 from rest_framework.response import Response
 from rest_framework import status
-# Create your views here.
+
+# Create your views here. admin
 class NoteList(generics.ListAPIView):
     queryset = StickNote.objects.all()
     serializer_class = StickNoteSerializer
@@ -34,6 +35,7 @@ class StickNoteCreate(generics.CreateAPIView):
     serializer_class = StickNoteSerializer
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
+
 class StickNoteDetail(generics.RetrieveAPIView):
     queryset = StickNote.objects.all()
     serializer_class = StickNoteSerializer
